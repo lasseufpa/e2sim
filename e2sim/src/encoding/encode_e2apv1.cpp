@@ -268,14 +268,14 @@ void encoding::generate_e2apv1_ric_control_acknowledge(E2AP_PDU_t *control_resp_
 
     auto *ric_control_status_ie = (RICcontrolAcknowledge_IEs *) calloc(1, sizeof(RICcontrolAcknowledge_IEs_t));
 
-    auto *ricControlStatus = (RICcontrolStatus_t *) calloc(1, sizeof(RICcontrolStatus_t));
+    auto *ricControlStatus = (RICcontrolOutcome_t *) calloc(1, sizeof(RICcontrolOutcome_t));
     // TODO fill
 //        ricControlStatus
 
     ric_control_status_ie->id = ProtocolIE_ID_id_RICcontrolStatus;
     ric_control_status_ie->criticality = Criticality_reject;
-    ric_control_status_ie->value.present = RICcontrolAcknowledge_IEs__value_PR_RICcontrolStatus;
-    ric_control_status_ie->value.choice.RICcontrolStatus = *ricControlStatus;
+    ric_control_status_ie->value.present = RICcontrolAcknowledge_IEs__value_PR_RICcontrolOutcome;
+    ric_control_status_ie->value.choice.RICcontrolOutcome = *ricControlStatus;
 
     auto *riCcontrolAcknowledge = (RICcontrolAcknowledge_t *) calloc(1, sizeof(RICcontrolAcknowledge_t));
     ASN_SEQUENCE_ADD(&riCcontrolAcknowledge->protocolIEs.list, req_id_ie);

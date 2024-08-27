@@ -1,4 +1,5 @@
 # E2 sim fork for ns-O-RAN
+This repository is a fork of the [e2sim](https://github.com/wineslab/o-ran-e2sim) project and has been modified to connect to the Near-RT RIC O-RAN Software Community.
 
 ================================
 
