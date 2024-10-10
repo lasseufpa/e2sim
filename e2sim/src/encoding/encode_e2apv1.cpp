@@ -184,7 +184,10 @@ void encoding::generate_e2apv1_setup_request_parameterized(E2AP_PDU_t *e2ap_pdu,
 //    free(gnb_bstring);
 
     GlobalgNB_ID_t *gnb = (GlobalgNB_ID_t *) calloc(1, sizeof(GlobalgNB_ID_t));
-    gnb->plmn_id = *plmnid;
+    PLMN_Identity_t *plmn_identity = (PLMN_Identity_t *) calloc(1, sizeof(PLMN_Identity_t));
+    plmn_identity->buf = plmnid->buf;
+    plmn_identity->size = plmnid->size;
+    gnb->plmn_id = *plmn_identity;
     gnb->gnb_id = *gnbchoice;
 
     GlobalE2node_gNB_ID_t *e2gnb = (GlobalE2node_gNB_ID_t *) calloc(1, sizeof(GlobalE2node_gNB_ID_t));
@@ -228,6 +231,9 @@ void encoding::generate_e2apv1_setup_request_parameterized(E2AP_PDU_t *e2ap_pdu,
 
         itemIes->value.choice.RANfunction_Item.ranFunctionDefinition = *nextRanFuncDesc;
         itemIes->value.choice.RANfunction_Item.ranFunctionRevision = nextRanFuncRev;
+
+        OCTET_STRING_fromBuf(&itemIes->value.choice.RANfunction_Item.ranFunctionOID, (char *)nextRanFunc.ranFunctionOID.buf, nextRanFunc.ranFunctionOID.size);
+        OCTET_STRING_fromBuf(&itemIes->value.choice.RANfunction_Item.ranFunctionDefinition, (char *)nextRanFunc.ranFunctionDesc->buf, nextRanFunc.ranFunctionDesc->size);
 
         ASN_SEQUENCE_ADD(&ranFlistIEs->value.choice.RANfunctions_List.list, itemIes);
     }
