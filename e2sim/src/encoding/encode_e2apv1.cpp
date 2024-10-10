@@ -204,9 +204,9 @@ void encoding::generate_e2apv1_setup_request_parameterized(E2AP_PDU_t *e2ap_pdu,
     e2setuprid->value.present = E2setupRequestIEs__value_PR_GlobalE2node_ID;
 
     auto *e2txid = (E2setupRequestIEs_t *) calloc(1, sizeof(E2setupRequestIEs_t));
-    e2txid->id = ProtocolIE_ID_id_GlobalE2node_ID;
+    e2txid->id = ProtocolIE_ID_id_TransactionID;
     e2txid->criticality = Criticality_reject; 
-    e2txid->value.present = E2setupRequestIEs__value_PR_GlobalE2node_ID;
+    e2txid->value.present = E2setupRequestIEs__value_PR_TransactionID;
     e2txid->value.choice.TransactionID = 1;
 
     auto *ranFlistIEs = (E2setupRequestIEs_t *) calloc(1, sizeof(E2setupRequestIEs_t));
@@ -239,27 +239,31 @@ void encoding::generate_e2apv1_setup_request_parameterized(E2AP_PDU_t *e2ap_pdu,
     }
 
 
-    auto e2configIE = (E2setupRequestIEs_t *) calloc(1, sizeof(E2setupRequestIEs_t));
+    auto *e2configIE = (E2setupRequestIEs_t *)calloc(1, sizeof(E2setupRequestIEs_t));
     e2configIE->id = ProtocolIE_ID_id_E2nodeComponentConfigAddition;
     e2configIE->criticality = Criticality_reject;
     e2configIE->value.present = E2setupRequestIEs__value_PR_E2nodeComponentConfigAddition_List;
     
-    auto *e2configAdditionItem = (E2nodeComponentConfigAddition_ItemIEs_t *) calloc(1, sizeof(E2nodeComponentConfigAddition_ItemIEs_t));
+    
+    auto *e2configAdditionItem = (E2nodeComponentConfigAddition_ItemIEs_t *)calloc(1, sizeof(E2nodeComponentConfigAddition_ItemIEs_t));
     e2configAdditionItem->id = ProtocolIE_ID_id_E2nodeComponentConfigAddition_Item;
     e2configAdditionItem->criticality = Criticality_reject;
     e2configAdditionItem->value.present = E2nodeComponentConfigAddition_ItemIEs__value_PR_E2nodeComponentConfigAddition_Item;
-
+    
+    e2configAdditionItem->value.choice.E2nodeComponentConfigAddition_Item.e2nodeComponentInterfaceType = E2nodeComponentInterfaceType_ng;
+    e2configAdditionItem->value.choice.E2nodeComponentConfigAddition_Item.e2nodeComponentID.present = E2nodeComponentID_PR_e2nodeComponentInterfaceTypeNG;
+    
     auto *intfNG = (E2nodeComponentInterfaceNG_t *) calloc(1, sizeof(E2nodeComponentInterfaceNG_t));
-
+    
     OCTET_STRING_fromString(&intfNG->amf_name, "nginterf");
     e2configAdditionItem->value.choice.E2nodeComponentConfigAddition_Item.e2nodeComponentID.choice.e2nodeComponentInterfaceTypeNG = intfNG;
-
+    
     OCTET_STRING_t *reqpart = &e2configAdditionItem->value.choice.E2nodeComponentConfigAddition_Item.e2nodeComponentConfiguration.e2nodeComponentRequestPart;
     OCTET_STRING_fromString(reqpart, "reqpart");
-
+    
     OCTET_STRING_t *respart = &e2configAdditionItem->value.choice.E2nodeComponentConfigAddition_Item.e2nodeComponentConfiguration.e2nodeComponentResponsePart;
     OCTET_STRING_fromString(respart, "respart");
-
+    
     ASN_SEQUENCE_ADD(&e2configIE->value.choice.E2nodeComponentConfigAddition_List.list, e2configAdditionItem);
 
     auto *e2setupreq = (E2setupRequest_t *) calloc(1, sizeof(E2setupRequest_t));
