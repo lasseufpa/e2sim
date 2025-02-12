@@ -21,11 +21,15 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct SlicePRBQuota;
+
 /* E2SM-RC-ControlHeader-Format1 */
 typedef struct E2SM_RC_ControlHeader_Format1 {
 	UE_Identity_t	 ueId;
 	RIC_Style_Type_t	 ric_ControlStyle_Type;
 	RIC_ControlAction_ID_t	 ric_ControlAction_ID;
+	struct SlicePRBQuota	*slicePRBQuota	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.
@@ -38,7 +42,7 @@ typedef struct E2SM_RC_ControlHeader_Format1 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_E2SM_RC_ControlHeader_Format1;
 extern asn_SEQUENCE_specifics_t asn_SPC_E2SM_RC_ControlHeader_Format1_specs_1;
-extern asn_TYPE_member_t asn_MBR_E2SM_RC_ControlHeader_Format1_1[3];
+extern asn_TYPE_member_t asn_MBR_E2SM_RC_ControlHeader_Format1_1[4];
 
 #ifdef __cplusplus
 }
