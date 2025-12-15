@@ -17,7 +17,7 @@ static asn_TYPE_member_t asn_MBR_E2connectionUpdate_List_1[] = {
 	{ ATF_POINTER, 0, 0,
 		(ASN_TAG_CLASS_UNIVERSAL | (16 << 2)),
 		0,
-		&asn_DEF_ProtocolIE_SingleContainer_2010P4,
+		&asn_DEF_ProtocolIE_SingleContainer_2010P0,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

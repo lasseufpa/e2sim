@@ -34,7 +34,7 @@ struct Cause;
 /* E2nodeComponentConfigurationAck */
 typedef struct E2nodeComponentConfigurationAck {
 	long	 updateOutcome;
-	struct Cause	*failureCause;	/* OPTIONAL */
+	struct Cause	*failureCause	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

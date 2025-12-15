@@ -24,8 +24,8 @@ struct GlobalenGNB_ID;
 
 /* E2nodeComponentInterfaceX2 */
 typedef struct E2nodeComponentInterfaceX2 {
-	struct GlobalENB_ID	*global_eNB_ID;	/* OPTIONAL */
-	struct GlobalenGNB_ID	*global_en_gNB_ID;	/* OPTIONAL */
+	struct GlobalENB_ID	*global_eNB_ID	/* OPTIONAL */;
+	struct GlobalenGNB_ID	*global_en_gNB_ID	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

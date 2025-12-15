@@ -32,8 +32,6 @@ xer_type_decoder_f RICindicationMessage_decode_xer;
 xer_type_encoder_f RICindicationMessage_encode_xer;
 per_type_decoder_f RICindicationMessage_decode_uper;
 per_type_encoder_f RICindicationMessage_encode_uper;
-per_type_decoder_f RICindicationMessage_decode_aper;
-per_type_encoder_f RICindicationMessage_encode_aper;
 
 #ifdef __cplusplus
 }

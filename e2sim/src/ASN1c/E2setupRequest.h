@@ -21,7 +21,7 @@ extern "C" {
 
 /* E2setupRequest */
 typedef struct E2setupRequest {
-	ProtocolIE_Container_2007P12_t	 protocolIEs;
+	ProtocolIE_Container_2007P0_t	 protocolIEs;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

@@ -48,8 +48,6 @@ xer_type_decoder_f E2nodeComponentInterfaceType_decode_xer;
 xer_type_encoder_f E2nodeComponentInterfaceType_encode_xer;
 per_type_decoder_f E2nodeComponentInterfaceType_decode_uper;
 per_type_encoder_f E2nodeComponentInterfaceType_encode_uper;
-per_type_decoder_f E2nodeComponentInterfaceType_decode_aper;
-per_type_encoder_f E2nodeComponentInterfaceType_encode_aper;
 
 #ifdef __cplusplus
 }

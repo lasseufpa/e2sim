@@ -44,8 +44,6 @@ xer_type_decoder_f CauseRICservice_decode_xer;
 xer_type_encoder_f CauseRICservice_encode_xer;
 per_type_decoder_f CauseRICservice_decode_uper;
 per_type_encoder_f CauseRICservice_encode_uper;
-per_type_decoder_f CauseRICservice_decode_aper;
-per_type_encoder_f CauseRICservice_encode_aper;
 
 #ifdef __cplusplus
 }

@@ -33,21 +33,6 @@ xer_type_decoder_f ProcedureCode_decode_xer;
 xer_type_encoder_f ProcedureCode_encode_xer;
 per_type_decoder_f ProcedureCode_decode_uper;
 per_type_encoder_f ProcedureCode_encode_uper;
-per_type_decoder_f ProcedureCode_decode_aper;
-per_type_encoder_f ProcedureCode_encode_aper;
-#define ProcedureCode_id_E2setup	((ProcedureCode_t)1)
-#define ProcedureCode_id_ErrorIndication	((ProcedureCode_t)2)
-#define ProcedureCode_id_Reset	((ProcedureCode_t)3)
-#define ProcedureCode_id_RICcontrol	((ProcedureCode_t)4)
-#define ProcedureCode_id_RICindication	((ProcedureCode_t)5)
-#define ProcedureCode_id_RICserviceQuery	((ProcedureCode_t)6)
-#define ProcedureCode_id_RICserviceUpdate	((ProcedureCode_t)7)
-#define ProcedureCode_id_RICsubscription	((ProcedureCode_t)8)
-#define ProcedureCode_id_RICsubscriptionDelete	((ProcedureCode_t)9)
-#define ProcedureCode_id_E2nodeConfigurationUpdate	((ProcedureCode_t)10)
-#define ProcedureCode_id_E2connectionUpdate	((ProcedureCode_t)11)
-#define ProcedureCode_id_RICsubscriptionDeleteRequired	((ProcedureCode_t)12)
-#define ProcedureCode_id_E2removal	((ProcedureCode_t)13)
 
 #ifdef __cplusplus
 }
