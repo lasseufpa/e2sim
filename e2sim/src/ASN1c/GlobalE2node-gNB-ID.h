@@ -27,9 +27,9 @@ struct GlobalenGNB_ID;
 /* GlobalE2node-gNB-ID */
 typedef struct GlobalE2node_gNB_ID {
 	GlobalgNB_ID_t	 global_gNB_ID;
-	struct GlobalenGNB_ID	*global_en_gNB_ID;	/* OPTIONAL */
-	GNB_CU_UP_ID_t	*gNB_CU_UP_ID;	/* OPTIONAL */
-	GNB_DU_ID_t	*gNB_DU_ID;	/* OPTIONAL */
+	struct GlobalenGNB_ID	*global_en_gNB_ID	/* OPTIONAL */;
+	GNB_CU_UP_ID_t	*gNB_CU_UP_ID	/* OPTIONAL */;
+	GNB_DU_ID_t	*gNB_DU_ID	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

@@ -28,8 +28,8 @@ struct RICsubsequentAction;
 typedef struct RICaction_ToBeSetup_Item {
 	RICactionID_t	 ricActionID;
 	RICactionType_t	 ricActionType;
-	RICactionDefinition_t	*ricActionDefinition;	/* OPTIONAL */
-	struct RICsubsequentAction	*ricSubsequentAction;	/* OPTIONAL */
+	RICactionDefinition_t	*ricActionDefinition	/* OPTIONAL */;
+	struct RICsubsequentAction	*ricSubsequentAction	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

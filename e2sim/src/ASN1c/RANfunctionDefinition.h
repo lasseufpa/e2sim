@@ -32,8 +32,6 @@ xer_type_decoder_f RANfunctionDefinition_decode_xer;
 xer_type_encoder_f RANfunctionDefinition_encode_xer;
 per_type_decoder_f RANfunctionDefinition_decode_uper;
 per_type_encoder_f RANfunctionDefinition_encode_uper;
-per_type_decoder_f RANfunctionDefinition_decode_aper;
-per_type_encoder_f RANfunctionDefinition_encode_aper;
 
 #ifdef __cplusplus
 }

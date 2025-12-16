@@ -22,7 +22,7 @@ extern "C" {
 /* TNLinformation */
 typedef struct TNLinformation {
 	BIT_STRING_t	 tnlAddress;
-	BIT_STRING_t	*tnlPort;	/* OPTIONAL */
+	BIT_STRING_t	*tnlPort	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

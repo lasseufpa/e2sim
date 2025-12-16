@@ -101,7 +101,7 @@ static const asn_ioc_cell_t asn_IOS_E2AP_ELEMENTARY_PROCEDURES_1_rows[] = {
 	{ "&criticality", aioc__value, &asn_DEF_Criticality, &asn_VAL_13_ignore }
 };
 static const asn_ioc_set_t asn_IOS_E2AP_ELEMENTARY_PROCEDURES_1[] = {
-	{ 13, 5, asn_IOS_E2AP_ELEMENTARY_PROCEDURES_1_rows }
+	13, 5, asn_IOS_E2AP_ELEMENTARY_PROCEDURES_1_rows
 };
 static int
 memb_procedureCode_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
@@ -134,20 +134,16 @@ select_UnsuccessfulOutcome_criticality_type(const asn_TYPE_descriptor_t *parent_
 	const asn_ioc_set_t *itable = asn_IOS_E2AP_ELEMENTARY_PROCEDURES_1;
 	size_t constraining_column = 3; /* &procedureCode */
 	size_t for_column = 4; /* &criticality */
-	size_t row, presence_index = 0;
+	size_t row;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct UnsuccessfulOutcome, procedureCode));
 	
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
 	
-	    if(type_cell->cell_kind == aioc__undefined)
-	        continue;
-	
-	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
-	        result.presence_index = presence_index;
+	        result.presence_index = row + 1;
 	        break;
 	    }
 	}
@@ -180,20 +176,16 @@ select_UnsuccessfulOutcome_value_type(const asn_TYPE_descriptor_t *parent_type, 
 	const asn_ioc_set_t *itable = asn_IOS_E2AP_ELEMENTARY_PROCEDURES_1;
 	size_t constraining_column = 3; /* &procedureCode */
 	size_t for_column = 2; /* &UnsuccessfulOutcome */
-	size_t row, presence_index = 0;
+	size_t row;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct UnsuccessfulOutcome, procedureCode));
 	
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
 	
-	    if(type_cell->cell_kind == aioc__undefined)
-	        continue;
-	
-	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
-	        result.presence_index = presence_index;
+	        result.presence_index = row + 1;
 	        break;
 	    }
 	}

@@ -24,8 +24,8 @@ extern "C" {
 /* GlobalE2node-en-gNB-ID */
 typedef struct GlobalE2node_en_gNB_ID {
 	GlobalenGNB_ID_t	 global_en_gNB_ID;
-	GNB_CU_UP_ID_t	*en_gNB_CU_UP_ID;	/* OPTIONAL */
-	GNB_DU_ID_t	*en_gNB_DU_ID;	/* OPTIONAL */
+	GNB_CU_UP_ID_t	*en_gNB_CU_UP_ID	/* OPTIONAL */;
+	GNB_DU_ID_t	*en_gNB_DU_ID	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

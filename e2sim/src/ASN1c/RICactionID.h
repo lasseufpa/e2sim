@@ -33,8 +33,6 @@ xer_type_decoder_f RICactionID_decode_xer;
 xer_type_encoder_f RICactionID_encode_xer;
 per_type_decoder_f RICactionID_decode_uper;
 per_type_encoder_f RICactionID_encode_uper;
-per_type_decoder_f RICactionID_decode_aper;
-per_type_encoder_f RICactionID_encode_aper;
 
 #ifdef __cplusplus
 }

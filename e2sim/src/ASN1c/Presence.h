@@ -41,8 +41,6 @@ xer_type_decoder_f Presence_decode_xer;
 xer_type_encoder_f Presence_encode_xer;
 per_type_decoder_f Presence_decode_uper;
 per_type_encoder_f Presence_encode_uper;
-per_type_decoder_f Presence_decode_aper;
-per_type_encoder_f Presence_encode_aper;
 
 #ifdef __cplusplus
 }

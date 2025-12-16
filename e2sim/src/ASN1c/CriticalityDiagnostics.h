@@ -27,11 +27,11 @@ struct CriticalityDiagnostics_IE_List;
 
 /* CriticalityDiagnostics */
 typedef struct CriticalityDiagnostics {
-	ProcedureCode_t	*procedureCode;	/* OPTIONAL */
-	TriggeringMessage_t	*triggeringMessage;	/* OPTIONAL */
-	Criticality_t	*procedureCriticality;	/* OPTIONAL */
-	struct RICrequestID	*ricRequestorID;	/* OPTIONAL */
-	struct CriticalityDiagnostics_IE_List	*iEsCriticalityDiagnostics;	/* OPTIONAL */
+	ProcedureCode_t	*procedureCode	/* OPTIONAL */;
+	TriggeringMessage_t	*triggeringMessage	/* OPTIONAL */;
+	Criticality_t	*procedureCriticality	/* OPTIONAL */;
+	struct RICrequestID	*ricRequestorID	/* OPTIONAL */;
+	struct CriticalityDiagnostics_IE_List	*iEsCriticalityDiagnostics	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.

@@ -42,8 +42,6 @@ xer_type_decoder_f CauseE2node_decode_xer;
 xer_type_encoder_f CauseE2node_encode_xer;
 per_type_decoder_f CauseE2node_decode_uper;
 per_type_encoder_f CauseE2node_encode_uper;
-per_type_decoder_f CauseE2node_decode_aper;
-per_type_encoder_f CauseE2node_encode_aper;
 
 #ifdef __cplusplus
 }
